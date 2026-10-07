@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri - Etkinlik Ekle</title>
+    <link rel="stylesheet" href="css/2311012827.css">
+    <script type="module" src="js/event-form.js"></script>
+    <style>
+        .hata-metni { color: var(--renk-hata); font-size: 0.85rem; display: block; margin-top: 0.25rem; }
+        [aria-invalid="true"] { border-color: var(--renk-hata) !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kampüs Etkinlikleri</h1>
+            <nav>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="etkinlikler.html">Etkinlikler</a>
+                <a href="etkinlik-ekle.html">Ekle</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Etkinlik Ekle</h2>
+            <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">Yıldızlı (*) alanlar zorunludur. Bu sprintte form veri kaydetmez; sonuç aşağıda gösterilir.</p>
+
+            <form id="etkinlik-formu" data-mode="ekle" novalidate>
+                <p>
+                    <label for="ad">Etkinlik Adı *</label>
+                    <input type="text" id="ad" name="ad" placeholder="Örn: Kariyer Günleri">
+                    <span id="ad-hata" class="hata-metni"></span>
+                </p>
+
+                <p>
+                    <label for="kategori">Kategori *</label>
+                    <select id="kategori" name="kategori">
+                        <option value="">Seçiniz</option>
+                        <option value="Seminer">Seminer</option>
+                        <option value="Atölye">Atölye</option>
+                        <option value="Söyleşi">Söyleşi</option>
+                    </select>
+                    <span id="kategori-hata" class="hata-metni"></span>
+                </p>
+
+                <p>
+                    <label for="tarih">Tarih *</label>
+                    <input type="date" id="tarih" name="tarih">
+                    <span id="tarih-hata" class="hata-metni"></span>
+                </p>
+
+                <p>
+                    <label for="saat">Saat *</label>
+                    <input type="time" id="saat" name="saat">
+                    <span id="saat-hata" class="hata-metni"></span>
+                </p>
+
+                <p>
+                    <label for="yer">Yer *</label>
+                    <input type="text" id="yer" name="yer" placeholder="Örn: A Blok Konferans Salonu">
+                    <span id="yer-hata" class="hata-metni"></span>
+                </p>
+
+                <p>
+                    <label for="kontenjan">Kontenjan</label>
+                    <input type="number" id="kontenjan" name="kontenjan" placeholder="Örn: 100">
+                    <span id="kontenjan-hata" class="hata-metni"></span>
+                </p>
+
+                <p>
+                    <label for="aciklama">Açıklama</label>
+                    <textarea id="aciklama" name="aciklama" rows="3" placeholder="Etkinlik açıklaması..."></textarea>
+                </p>
+
+                <p>
+                    <button type="submit">Kaydet</button>
+                </p>
+
+                <div id="form-mesaj"></div>
+            </form>
+        </main>
+
+        <footer>
+            <p>Emine Ergür · 2311012827 · 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

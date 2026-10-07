@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampüs Etkinlikleri - Tüm Etkinlikler</title>
+    <link rel="stylesheet" href="css/2311012827.css">
+    <script type="module" src="js/event-list.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kampüs Etkinlikleri</h1>
+            <nav>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="etkinlikler.html">Etkinlikler</a>
+                <a href="etkinlik-ekle.html">Ekle</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Tüm Etkinlikler</h2>
+
+            <!-- Filtre Alanları -->
+            <form id="filtre-formu" class="filtre" onsubmit="event.preventDefault();" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                <div style="flex: 1; min-width: 200px;">
+                    <label for="arama">Etkinlik ara</label>
+                    <input type="search" id="arama" placeholder="Örn: atölye, kariyer...">
+                </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <label for="kategori-filtre">Kategori</label>
+                    <select id="kategori-filtre">
+                        <option value="">Tümü</option>
+                    </select>
+                </div>
+            </form>
+
+            <p id="sonuc" style="margin-bottom: 1.5rem; font-weight: bold; color: var(--renk-ana);"></p>
+
+            <!-- Boş Liste Alanı -->
+            <section id="etkinlik-listesi" class="grid-cards grid-cards-3"></section>
+        </main>
+
+        <footer>
+            <p>Emine Ergür · 2311012827 · 2026</p>
+        </footer>
+    </div>
+</body>
+</html>

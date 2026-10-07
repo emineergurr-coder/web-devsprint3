@@ -1,0 +1,248 @@
+/* Emine Ergür 2311012827 */
+:root {
+    --no: 2311012827;
+    --ton: 227; /* 2311012827 mod 360 */
+    --renk-ana: hsl(var(--ton) 65% 38%);
+    --renk-zemin: hsl(var(--ton) 30% 97%);
+    --renk-kart: #ffffff;
+    --renk-yazi: #222222;
+    --renk-hata: #d32f2f;
+    --renk-kenarlik: hsl(var(--ton) 20% 85%);
+    --font: "Palatino Linotype", serif;
+    --bosluk-m: 1rem;
+    --kose: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--renk-zemin);
+    color: var(--renk-yazi);
+    line-height: 1.5;
+    padding: var(--bosluk-m);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Ortak Başlık ve Navigasyon */
+header {
+    background-color: var(--renk-ana);
+    color: #ffffff;
+    padding: var(--bosluk-m);
+    border-radius: var(--kose);
+    margin-bottom: var(--bosluk-m);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Ana İçerik Kutusu */
+main {
+    background-color: var(--renk-kart);
+    padding: calc(var(--bosluk-m) * 1.25);
+    border-radius: var(--kose);
+    border: 1px solid var(--renk-kenarlik);
+    margin-bottom: var(--bosluk-m);
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--bosluk-m);
+    color: var(--renk-ana);
+}
+
+/* Kart Grid Sistemi (Mobil: 1 sütun, Masaüstü: Çoklu) */
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--bosluk-m);
+    margin-bottom: var(--bosluk-m);
+}
+
+@media (min-width: 600px) {
+    .grid-cards-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-cards-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background: var(--renk-kart);
+    border: 1px solid var(--renk-kenarlik);
+    border-radius: var(--kose);
+    padding: var(--bosluk-m);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.card a, .btn-link {
+    display: inline-block;
+    color: var(--renk-ana);
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: auto;
+    padding: 0.25rem 0;
+}
+
+/* Detay Sayfası İki Sütun Düzeni */
+.detay-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--bosluk-m);
+}
+
+@media (min-width: 650px) {
+    .detay-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+figure {
+    flex: 1;
+    max-width: 100%;
+}
+
+figure img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: var(--kose);
+    border: 1px solid var(--renk-kenarlik);
+    display: block;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+dl {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    row-gap: 0.6rem;
+    column-gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--renk-ana);
+}
+
+dd {
+    margin: 0;
+}
+
+.aciklama-kutusu {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--renk-kenarlik);
+}
+
+/* Form Tasarımı ve Hata Vurgusu */
+form p {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid var(--renk-kenarlik);
+    border-radius: var(--kose);
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #fafafa;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--renk-ana);
+    background: #fff;
+}
+
+input:invalid, select:invalid {
+    border-color: var(--renk-hata);
+}
+
+button {
+    background-color: var(--renk-ana);
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: var(--kose);
+    cursor: pointer;
+    min-height: 44px;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    button {
+        width: auto;
+    }
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777;
+    padding: var(--bosluk-m) 0;
+}
